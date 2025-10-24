@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Faith Web: Creación de sitios web profesionales y con propósito." />
+  <title>Faith Web - Sitios Web Profesionales</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="assets/logo_faith_web.png" />
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav>
+    <img src="assets/logo_faith_web.png" alt="Faith Web Logo" />
+    <ul>
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- Header -->
+  <header id="inicio">
+    <img src="assets/logo-web.png" alt="Faith Web Logo" />
+    <h1>Faith Web</h1>
+    <p>Diseñamos y desarrollamos sitios web modernos con propósito y excelencia.</p>
+    <a href="#contacto"><button class="btn-primary">Empezá tu proyecto</button></a>
+  </header>
+
+  <!-- Servicios -->
+  <section id="servicios">
+    <h2>Nuestros Servicios</h2>
+    <div class="services">
+      <div class="service">
+        <i class="fas fa-rocket"></i>
+        <h3>Landing Pages</h3>
+        <p>Diseños personalizados y optimizados para captar la atención y convertir visitantes en clientes.</p>
+      </div>
+      <div class="service">
+        <i class="fas fa-building"></i>
+        <h3>Webs Institucionales</h3>
+        <p>Presencia online profesional para tu negocio o proyecto, gestionable con WordPress.</p>
+      </div>
+      <div class="service">
+        <i class="fas fa-shopping-cart"></i>
+        <h3>Tiendas Online</h3>
+        <p>E-commerce con WooCommerce, listos para vender de manera simple y segura.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto">
+    <h2>Contáctanos</h2>
+    <p>¿Listo para comenzar tu proyecto web? Escribinos y te responderemos pronto.</p>
+    <form action="https://formspree.io/f/xldorjbz" method="POST"> <!-- Formspree -->
+      <input type="text" name="name" placeholder="Tu Nombre" required />
+      <input type="email" name="email" placeholder="Tu Email" required />
+      <textarea name="message" rows="5" placeholder="Tu Mensaje" required></textarea>
+      <button class="btn-primary" type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Faith Web. Todos los derechos reservados.</p>
+    <div class="social-links">
+      <a href="https://instagram.com/faith.web" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+  </footer>
+
+  <!-- WhatsApp -->
+  <a href="https://wa.me/5491173653504" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script>
+    // Navbar scroll
+    window.addEventListener('scroll', () => {
+      document.querySelector('nav').classList.toggle('scrolled', window.scrollY > 50);
+    });
+  </script>
+</body>
+</html>
