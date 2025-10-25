@@ -9,12 +9,14 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" type="image/png" href="assets/logo_faith_web.png" />
+  <link rel="shortcut icon" type="image/png" href="assets/logo_faith_web.png" />
+  <link rel="apple-touch-icon" href="assets/logo_faith_web.png" />
 </head>
 
 <body>
   <!-- Navbar -->
   <nav>
-    <img src="assets/logo_faith_web.png" alt="Faith Web Logo" />
+    <a href="#inicio"><img src="assets/logo_faith_web.png" alt="Faith Web Logo" /></a>
     <ul class="nav-menu">
       <li><a href="#inicio">Inicio</a></li>
       <li><a href="#servicios">Servicios</a></li>
@@ -29,7 +31,6 @@
 
   <!-- Header -->
   <header id="inicio">
-    <img src="assets/logo-web.png" alt="Faith Web Logo" />
     <h1>Faith Web</h1>
     <p>Diseñamos y desarrollamos sitios web modernos con propósito y excelencia.</p>
     <a href="#contacto"><button class="btn-primary">Empezá tu proyecto</button></a>
@@ -78,7 +79,7 @@
   </footer>
 
   <!-- WhatsApp -->
-  <a href="https://wa.me/5491173653504" class="whatsapp-float" target="_blank">
+  <a href="https://wa.me/5491173653504?text=Hola!%20Necesito%20una%20web%20para%20mi%20negocio.%20Mi%20nombre%20es%20(completar)%20y%20mi%20negocio%20es%20(contar%20como%20se%20llama%20y%20de%20que%20trata)" class="whatsapp-float" target="_blank">
     <i class="fab fa-whatsapp"></i>
   </a>
 
@@ -97,8 +98,8 @@
       navMenu.classList.toggle('active');
     });
 
-    // Close menu when clicking on a link
-    document.querySelectorAll('.nav-menu a').forEach(link => {
+    // Close menu when clicking on a link or logo
+    document.querySelectorAll('.nav-menu a, nav a').forEach(link => {
       link.addEventListener('click', () => {
         hamburger.classList.remove('active');
         navMenu.classList.remove('active');
