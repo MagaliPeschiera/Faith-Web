@@ -34,7 +34,7 @@
     <h1>Faith Web</h1>
     <p class="subtitle">Diseñamos y desarrollamos sitios web modernos con propósito y excelencia.</p>
     <p class="description">Transformamos tu visión digital en realidad. Creamos experiencias web únicas que conectan con tu audiencia y potencian tu negocio.</p>
-    <a href="#contacto"><button class="btn-primary">Empezá tu proyecto</button></a>
+    <a href="#contacto"><button class="btn-primary">QUIERO UNA WEB</button></a>
   </header>
 
   <!-- Servicios -->
@@ -44,17 +44,44 @@
       <div class="service">
         <i class="fas fa-rocket"></i>
         <h3>Landing Pages</h3>
-        <p>Diseños personalizados y optimizados para captar la atención y convertir visitantes en clientes.</p>
+        <p>Páginas de aterrizaje enfocadas en una acción específica: captar leads, promocionar un producto o servicio, o generar conversiones. Perfectas para campañas publicitarias, lanzamientos o cuando necesitas dirigir el tráfico hacia un objetivo claro. Ideal si tienes un producto o servicio específico que quieres promocionar de manera efectiva.</p>
       </div>
       <div class="service">
         <i class="fas fa-building"></i>
         <h3>Webs Institucionales</h3>
-        <p>Presencia online profesional para tu negocio o proyecto, gestionable con WordPress.</p>
+        <p>Tu presencia completa en internet. Sitios web corporativos que muestran tu empresa, servicios, equipo y valores. Perfectos para establecer credibilidad, generar confianza y proporcionar información detallada sobre tu negocio. Ideal para empresas, profesionales independientes, organizaciones o cualquier marca que necesite una presencia profesional y completa en línea.</p>
       </div>
       <div class="service">
         <i class="fas fa-shopping-cart"></i>
         <h3>Tiendas Online</h3>
-        <p>E-commerce con WooCommerce, listos para vender de manera simple y segura.</p>
+        <p>Tu negocio abierto 24/7 en internet. Plataformas de e-commerce completas donde puedes vender productos, gestionar inventario, procesar pagos y administrar pedidos. Perfectas para expandir tu negocio físico o crear un emprendimiento completamente digital. Ideal si tienes productos físicos o digitales que quieres vender online de forma segura y profesional.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Beneficios -->
+  <section id="beneficios" class="benefits-section">
+    <h2>¿Por qué elegirnos?</h2>
+    <div class="benefits">
+      <div class="benefit">
+        <i class="fas fa-mobile-alt"></i>
+        <h3>100% Responsive</h3>
+        <p>Tu sitio se verá perfecto en todos los dispositivos</p>
+      </div>
+      <div class="benefit">
+        <i class="fas fa-tachometer-alt"></i>
+        <h3>Rápido y Optimizado</h3>
+        <p>Carga rápida para una mejor experiencia de usuario</p>
+      </div>
+      <div class="benefit">
+        <i class="fas fa-shield-alt"></i>
+        <h3>Seguro y Confiable</h3>
+        <p>Protección y seguridad para tu negocio online</p>
+      </div>
+      <div class="benefit">
+        <i class="fas fa-paint-brush"></i>
+        <h3>Diseño Personalizado</h3>
+        <p>Cada proyecto es único y hecho a medida</p>
       </div>
     </div>
   </section>
@@ -74,13 +101,13 @@
   <!-- Footer -->
   <footer>
     <p>&copy; 2025 Faith Web. Todos los derechos reservados.</p>
-    <div class="social-links">
-      <a href="https://instagram.com/faith.web" target="_blank"><i class="fab fa-instagram"></i></a>
-    </div>
   </footer>
 
-  <!-- WhatsApp -->
-  <a href="https://wa.me/5491173653504?text=Hola!%20Necesito%20una%20web%20para%20mi%20negocio.%20Mi%20nombre%20es%20(completar)%20y%20mi%20negocio%20es%20(contar%20como%20se%20llama%20y%20de%20que%20trata)" class="whatsapp-float" target="_blank">
+  <!-- Redes Sociales Flotantes -->
+  <a href="https://instagram.com/faith.web" class="instagram-float" target="_blank" title="Síguenos en Instagram">
+    <i class="fab fa-instagram"></i>
+  </a>
+  <a href="https://wa.me/5491173653504?text=Hola!%20Necesito%20una%20web%20para%20mi%20negocio.%20Mi%20nombre%20es%20(completar)%20y%20mi%20negocio%20es%20(contar%20como%20se%20llama%20y%20de%20que%20trata)" class="whatsapp-float" target="_blank" title="Contáctanos por WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
 
@@ -105,6 +132,64 @@
         hamburger.classList.remove('active');
         navMenu.classList.remove('active');
       });
+    });
+
+    // Animaciones al hacer scroll
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    // Observar servicios para animación
+    document.querySelectorAll('.service').forEach((service, index) => {
+      service.style.opacity = '0';
+      service.style.transform = 'translateY(30px)';
+      service.style.transition = `opacity 0.6s ease ${index * 0.2}s, transform 0.6s ease ${index * 0.2}s`;
+      observer.observe(service);
+    });
+
+    // Observar beneficios para animación
+    document.querySelectorAll('.benefit').forEach((benefit, index) => {
+      benefit.style.opacity = '0';
+      benefit.style.transform = 'translateY(30px)';
+      benefit.style.transition = `opacity 0.6s ease ${index * 0.15}s, transform 0.6s ease ${index * 0.15}s`;
+      observer.observe(benefit);
+    });
+
+    // Observar formulario para animación
+    const form = document.querySelector('form');
+    if (form) {
+      form.style.opacity = '0';
+      form.style.transform = 'translateY(30px)';
+      form.style.transition = 'opacity 0.6s ease 0.3s, transform 0.6s ease 0.3s';
+      observer.observe(form);
+    }
+
+    // Efecto parallax suave en el header
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      const header = document.querySelector('header');
+      if (header && scrolled < window.innerHeight * 0.8) {
+        header.style.transform = `translateY(${scrolled * 0.3}px)`;
+        header.style.opacity = 1 - (scrolled / (window.innerHeight * 0.8)) * 0.3;
+      }
+    });
+
+    // Animación de botón principal al cargar
+    window.addEventListener('load', () => {
+      const headerBtn = document.querySelector('header .btn-primary');
+      if (headerBtn) {
+        headerBtn.style.animation = 'pulse 3s infinite';
+      }
     });
   </script>
 </body>
