@@ -32,9 +32,12 @@
   <!-- Header -->
   <header id="inicio">
     <h1>Faith Web</h1>
-    <p class="subtitle">Diseñamos y desarrollamos sitios web modernos con propósito y excelencia.</p>
+    <p class="subtitle">Diseñamos y desarrollamos paginas web con propósito y excelencia.</p>
     <p class="description">Transformamos tu visión digital en realidad. Creamos experiencias web únicas que conectan con tu audiencia y potencian tu negocio.</p>
-    <a href="#contacto"><button class="btn-primary">QUIERO UNA WEB</button></a>
+    <a href="https://wa.me/5491173653504?text=Hola!%20Quiero%20una%20web%20para%20mi%20negocio" target="_blank">
+      <button class="btn-primary">QUIERO UNA WEB</button>
+    </a>
+    
   </header>
 
   <!-- Servicios -->
@@ -44,17 +47,17 @@
       <div class="service">
         <i class="fas fa-rocket"></i>
         <h3>Landing Pages</h3>
-        <p>Páginas de aterrizaje enfocadas en una acción específica: captar leads, promocionar un producto o servicio, o generar conversiones. Perfectas para campañas publicitarias, lanzamientos o cuando necesitas dirigir el tráfico hacia un objetivo claro. Ideal si tienes un producto o servicio específico que quieres promocionar de manera efectiva.</p>
+        <p>Páginas simples, directas y pensadas para convertir. Ideales para campañas o promociones puntuales.</p>
       </div>
       <div class="service">
         <i class="fas fa-building"></i>
         <h3>Webs Institucionales</h3>
-        <p>Tu presencia completa en internet. Sitios web corporativos que muestran tu empresa, servicios, equipo y valores. Perfectos para establecer credibilidad, generar confianza y proporcionar información detallada sobre tu negocio. Ideal para empresas, profesionales independientes, organizaciones o cualquier marca que necesite una presencia profesional y completa en línea.</p>
+        <p>Sitios completos para presentar tu marca, servicios y generar confianza con tus clientes.</p>
       </div>
       <div class="service">
         <i class="fas fa-shopping-cart"></i>
         <h3>Tiendas Online</h3>
-        <p>Tu negocio abierto 24/7 en internet. Plataformas de e-commerce completas donde puedes vender productos, gestionar inventario, procesar pagos y administrar pedidos. Perfectas para expandir tu negocio físico o crear un emprendimiento completamente digital. Ideal si tienes productos físicos o digitales que quieres vender online de forma segura y profesional.</p>
+        <p>E-commerce funcional y profesional para vender tus productos 24/7 de forma fácil y segura.</p>
       </div>
     </div>
   </section>
@@ -89,8 +92,8 @@
   <!-- Contacto -->
   <section id="contacto">
     <h2>Contáctanos</h2>
-    <p>¿Listo para comenzar tu proyecto web? Escribinos y te responderemos pronto.</p>
-    <form action="https://formspree.io/f/xldorjbz" method="POST"> <!-- Formspree -->
+    <p>¿Listo para comenzar tu pagina web? Escribinos y te responderemos pronto.</p>
+    <form id="contact-form">   
       <input type="text" name="name" placeholder="Tu Nombre" required />
       <input type="email" name="email" placeholder="Tu Email" required />
       <textarea name="message" rows="5" placeholder="Tu Mensaje" required></textarea>
@@ -192,5 +195,28 @@
       }
     });
   </script>
+  <script>
+    const formElement = document.getElementById("contact-form");
+  
+    formElement.addEventListener("submit", async (e) => {
+      e.preventDefault();
+  
+      const formData = new FormData(formElement);
+  
+      const response = await fetch("https://formspree.io/f/xldorjbz", {
+        method: "POST",
+        body: formData,
+        headers: { Accept: "application/json" }
+      });
+  
+      if (response.ok) {
+        formElement.reset();
+        alert("¡Tu mensaje se envió con éxito! 💙");
+      } else {
+        alert("Hubo un error al enviar. Probá de nuevo.");
+      }
+    });
+  </script>
+  
 </body>
 </html>
